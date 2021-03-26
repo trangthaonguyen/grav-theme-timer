@@ -13,7 +13,7 @@ Call To Action Section Start
       <div class="col-md-12">
         <div class="block">
           <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">{{ title }}</h2>
-            {{ content|striptags('<b><strong><br><i><em><blockquote>') }}
+            {{ content|striptags('<b><strong><br><i><em><blockquote>')|raw }}
           </p>
           <a href="{{ button_url }}" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">{{ button_label }}</a>
         </div>

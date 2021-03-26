@@ -7,8 +7,8 @@
     <div class="row">
       {% for item in page.header.items %}
       <div class="block about-feature-{{ loop.index }} wow fadeInDown" data-wow-duration="500ms" data-wow-delay="{{ loop.index * 0.2 + 0.3 }}s">
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.content }}</p>
+        <h2>{{ item.title|raw }}</h2>
+        <p>{{ item.content|raw }}</p>
       </div>
       {% endfor %}
     </div>

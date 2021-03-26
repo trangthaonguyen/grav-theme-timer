@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">{{ page.title }}</h2>
     <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms">
-      {{ page.header.description }}
+      {{ page.header.description|raw }}
     </p>
     <div class="row">
       {% for item in page.header.items %}
@@ -21,7 +21,7 @@
             <h4>
               <a href="{{ item.url }}">{{ item.name }}</a>
             </h4>
-            <p>{{ item.description }}</p>
+            <p>{{ item.description|raw }}</p>
           </figcaption>
         </figure>
       </div>

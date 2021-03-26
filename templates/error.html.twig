@@ -8,7 +8,7 @@
           <div class="text-center">
             <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s" >{{ page.header.http_response_code }}</h1>
             <h2 class="wow fadeInUp animated" data-wow-delay=".6s">{{ 'THEME.SITE.ERROR'|t }}</h2>
-            <p class="wow fadeInUp animated" data-wow-delay=".9s">{{ page.content }}</p>
+            <p class="wow fadeInUp animated" data-wow-delay=".9s">{{ page.content|raw }}</p>
             <a href="{{ base_url == '' ? '/' : base_url }}" class="btn btn-default btn-home wow fadeInUp animated" data-wow-delay="1.1s">{{ 'THEME.SITE.GO_HOME'|t }}</a>
           </div>
         </div>

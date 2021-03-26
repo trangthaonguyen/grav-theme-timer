@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="block">
-            <h2>{{ page.header.title }}</h2>
+            <h2>{{ page.header.title|raw }}</h2>
             <div class="portfolio-meta">
               <span>{{ page.header.date|date(config.system.pages.dateformat.long) }}</span>|
               <span> {{ 'THEME.SITE.CAT'|t }}: {% for cat in page.header.taxonomy.category %}{{ cat }}{% if not loop.last %}, {% endif %}{% endfor %}</span>|
@@ -32,10 +32,10 @@
       <div class="row">
         <div class="col-md-12">
           <div class="post-img">
-            <img class="img-responsive" alt="{{ page.header.alt }}" src="{{ page.media.images[page.header.image].cache.url() }}">
+            <img class="img-responsive" alt="{{ page.header.alt|raw }}" src="{{ page.media.images[page.header.image].cache.url() }}">
           </div>
           <div class="post-content">
-            {{ page.content }}
+            {{ page.content|raw }}
           </div>
           <ul class="social-share">
             <h4>{{ 'THEME.SITE.SHARE'|t }}</h4>

@@ -25,7 +25,7 @@
         {% do assets.addCss('theme://css/jquery.fancybox.css') %}
         {% do assets.addCss('theme://css/style.css') %}
     {% endblock %}
-    {{ assets.css() }}
+    {{ assets.css()|raw }}
 
     {% block javascripts %}
         {% do assets.addJs('jquery', 101) %}
@@ -36,7 +36,7 @@
         {% do assets.addJs('theme://js/slider.js', {group:'bottom'}) %}
         {% do assets.addJs('theme://js/main.js', {group:'bottom'}) %}
     {% endblock %}
-    {{ assets.js() }}
+    {{ assets.js()|raw }}
 
   {% endblock head %}
   </head>
@@ -110,7 +110,7 @@
     </footer> <!-- /#footer -->
 
     {% block bottom %}
-      {{ assets.js('bottom') }}
+      {{ assets.js('bottom')|raw }}
     {% endblock %}
 
   </body>

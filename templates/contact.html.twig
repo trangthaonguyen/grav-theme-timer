@@ -6,9 +6,9 @@
       <div class="row">
         <div class="col-md-6">
           <div class="block">
-            <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">{{ page.title }}</h2>
+            <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">{{ page.title|raw }}</h2>
             <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
-              {{ page.content|striptags('<b><strong><br><i><em><blockquote>')}}
+              {{ page.content|striptags('<b><strong><br><i><em><blockquote>')|raw }}
             </p>
             <div class="contact-form">
               {% include "forms/contact.html.twig" with { form: forms("contact"), page: page} %}
@@ -18,12 +18,12 @@
 
         <div class="col-md-6">
           <div class="map-area">
-            <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">{{ page.header.map.title }}</h2>
+            <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">{{ page.header.map.title|raw }}</h2>
             <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
-              {{ page.header.map.content }}
+              {{ page.header.map.content|raw }}
             </p>
             <div class="map">
-              {{ page.header.map.iframe }}
+              {{ page.header.map.iframe|raw }}
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="col-md-3">
           <div class="{{ item.classes }}" data-wow-duration="500ms" data-wow-delay=-"{{ loop.index * 0.2 + 0.3 }}s">
             <i class="{{ item.icon }}"></i>
-            <h5>{{ item.content }}</h5>
+            <h5>{{ item.content|raw }}</h5>
           </div>
         </div>
         {% endfor %}

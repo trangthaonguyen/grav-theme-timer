@@ -7,8 +7,8 @@ About Section Start
     <div class="row">
       <div class="col-md-6 col-sm-6">
         <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
-          <h2>{{ page.title }}</h2>
-          {{ page.content }}
+          <h2>{{ page.title|raw }}</h2>
+          {{ page.content|raw }}
         </div>
       </div>
       

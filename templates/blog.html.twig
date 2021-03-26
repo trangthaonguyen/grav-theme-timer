@@ -29,7 +29,7 @@
                 <ul>
                   {% for rp_post in rp_collection %}
                   <li>
-                    <a href="{{ rp_post.url }}">{{ rp_post.title }}</a><br>
+                    <a href="{{ rp_post.url }}">{{ rp_post.title|raw }}</a><br>
                     <time>{{ rp_post.date|date(config.system.pages.dateformat.long) }}</time>
                   </li>
                   {% endfor %}
@@ -44,13 +44,13 @@
           <article class="wow fadeInDown" data-wow-delay="{{ loop.index * 0.3 + 0.3 }}s" data-wow-duration="500ms">
             <div class="blog-post-image">
               <a href="{{ post.url }}">
-                <img class="img-responsive" src="{{ post.media.images[post.header.image].cache.url() }}" alt="{{ post.header.alt }}" />
+                <img class="img-responsive" src="{{ post.media.images[post.header.image].cache.url() }}" alt="{{ post.header.alt|raw }}" />
               </a>
             </div>
             
             <div class="blog-content">
               <h2 class="blogpost-title">
-                <a href="{{ post.url }}">{{ post.title }}</a>
+                <a href="{{ post.url }}">{{ post.title|raw }}</a>
               </h2>
               <div class="blog-meta">
                 <span>{{ post.header.date|date(config.system.pages.dateformat.long) }}</span>
@@ -61,7 +61,7 @@
                   {% endfor %}
                 </span>
               </div>
-              <p>{{ post.summary }}</p>
+              <p>{{ post.summary|raw }}</p>
               <a href="{{ post.url }}" class="btn btn-dafault btn-details">{{ 'THEME.SITE.CONT'|t }}</a>
             </div>
           </article>
@@ -90,7 +90,7 @@
                 <ul>
                   {% for rp_post in rp_collection %}
                   <li>
-                    <a href="{{ rp_post.url }}">{{ rp_post.title }}</a><br>
+                    <a href="{{ rp_post.url }}">{{ rp_post.title|raw }}</a><br>
                     <time>{{ rp_post.date|date(config.system.pages.dateformat.long) }}</time>
                   </li>
                   {% endfor %}
